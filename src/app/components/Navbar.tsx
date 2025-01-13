@@ -11,9 +11,9 @@ interface NavItem {
 
 export default function Navbar() {
   const navItems: NavItem[] = [
-    { label: "home", href: "/" },
-    { label: "projects", href: "/projects" },
-    { label: "resume", href: "/AiboFengResume.pdf", external: true },
+    { label: "home", href: "./" },
+    { label: "projects", href: "./projects" },
+    { label: "resume", href: "./AiboFengResume.pdf", external: true },
     { label: "linkedIn", href: "https://www.linkedin.com/in/aibo/", external: true },
     { label: "email", href: "mailto:aibo.feng1@gmail.com", external: true },
   ];
