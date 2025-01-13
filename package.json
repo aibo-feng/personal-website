@@ -6,8 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://aibo-feng.github.io/personal-website",
   "dependencies": {
     "gh-pages": "^6.3.0",
     "next": "15.1.4",
