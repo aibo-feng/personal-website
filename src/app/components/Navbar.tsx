@@ -31,14 +31,14 @@ export default function Navbar() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-100 transition-colors duration-300"
+                    className="text-sm sm:text-base text-gray-400 hover:text-gray-100 transition-colors duration-300"
                   >
                     {item.label}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-gray-100 transition-colors duration-300"
+                    className="text-sm sm:text-base text-gray-400 hover:text-gray-100 transition-colors duration-300"
                   >
                     {item.label}
                   </Link>

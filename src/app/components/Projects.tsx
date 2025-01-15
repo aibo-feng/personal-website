@@ -92,7 +92,7 @@ export default function Projects() {
   return (
     <section className="bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl sm:text-4xl mb-4 mt-10 text-center font-garamond text-teal-title">
+        <h2 className="text-2xl sm:text-4xl mb-4 mt-10 text-center">
           Projects
         </h2>
         <ul className="space-y-6 py-6">
@@ -107,16 +107,16 @@ export default function Projects() {
             >
               <button
                 type="button"
-                className="flex justify-between items-center w-full text-left bg-transparent border-none focus:outline-none"
+                className="flex justify-between items-center gap-4 w-full text-left bg-transparent border-none focus:outline-none"
                 onClick={() => toggleProject(project.id)}
                 aria-expanded={openProjectIds.includes(project.id)}
                 aria-controls={`project-description-${project.id}`}
               >
-                <h3 className="text-base font-garamond text-teal-title">
+                <span className="flex-1 text-sm sm:text-base">
                   {project.title}
-                </h3>
+                </span>
                 <svg
-                  className={`w-6 h-6 transform transition-transform duration-300 ${
+                  className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 transform transition-transform duration-300 ${
                     openProjectIds.includes(project.id) ? "rotate-180" : "rotate-0"
                   }`}
                   fill="none"
@@ -140,7 +140,7 @@ export default function Projects() {
                     : "opacity-0 max-h-0"
                 } overflow-hidden mt-2`}
               >
-                <p className="text-gray-400">{project.description}</p>
+                <p className="text-gray-400 text-sm sm:text-base">{project.description}</p>
               </div>
             </li>
           ))}

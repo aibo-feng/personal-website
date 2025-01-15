@@ -16,11 +16,14 @@ export default {
         // custom text colors
         'light-text': '#E0E0E0',
         'muted-text': '#A0AEC0',
+        
+        // for text links
+        'hover-link': '#A594F9',
       },
       fontFamily: {
         // define custom times font family
         "times": ['"Times New Roman"', 'Times', 'serif'],
-        "eb-garamond": ['var(--font-eb-garamond)', "serif"],
+        "garamond": ['var(--font-eb-garamond)', "serif"],
         "mono": ['"Courier New"', "Courier", "monospace"],
         // sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         // mono: ['var(--font-roboto-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
