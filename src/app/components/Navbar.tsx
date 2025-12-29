@@ -14,7 +14,7 @@ export default function Navbar() {
     { label: "home", href: "./" },
     { label: "projects", href: "./projects" },
     { label: "resume", href: "./AiboFengResume.pdf", external: true },
-    { label: "linkedIn", href: "https://www.linkedin.com/in/aibo/", external: true },
+    { label: "linkedin", href: "https://www.linkedin.com/in/aibo/", external: true },
     { label: "email", href: "mailto:aibo.feng1@gmail.com", external: true },
   ];
 

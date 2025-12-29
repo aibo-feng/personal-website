@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 export default function About() {
   const [isTopVisible, setIsTopVisible] = useState(false);
   const [isBottomVisible, setIsBottomVisible] = useState(false);
+  const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);
 
   useEffect(() => {
     // trigger fade-in effect for the top paragraph
@@ -17,9 +18,15 @@ export default function About() {
       setIsBottomVisible(true);
     }, 390); // slightly longer delay for bottom paragraph
 
+    // trigger fade-in for the "Always learning" sentence after 1s
+    const alwaysTimeout = setTimeout(() => {
+      setIsAlwaysVisible(true);
+    }, 1000); // show "Always learning" after 1s
+
     return () => {
       clearTimeout(topTimeout);
       clearTimeout(bottomTimeout);
+      clearTimeout(alwaysTimeout);
     }; // cleanup timeouts on unmount
   }, []);
 
@@ -33,7 +40,7 @@ export default function About() {
               isTopVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            Computer Science &apos;26 at the{" "}
+            Computer Science &apos;25 at the{" "}
             <a
               href="https://www.washington.edu"
               target="_blank"
@@ -52,20 +59,36 @@ export default function About() {
               rel="noopener noreferrer"
               className="relative hover:text-gray-100 transition-colors duration-300 group"
             >
-              AWS<span
+              AWS <span
                 className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-100 scale-x-0 origin-right group-hover:origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"
                 aria-hidden="true"
               /> 
-            </a>. Interested in full-stack development, cloud computing, and building cool things.
+            </a>
+            and {" "}
+            <a
+              href="https://www.oracle.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative hover:text-gray-100 transition-colors duration-300 group"
+            >
+              Oracle<span
+                className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-100 scale-x-0 origin-right group-hover:origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"
+                aria-hidden="true"
+              />
+            </a>
+            . Interested in full-stack development, deep learning, distributed systems, and cloud infrastructure.
+            <span className={`transition-opacity duration-1000 ease-in-out ml-1 ${isAlwaysVisible ? "opacity-100" : "opacity-0"}`}>
+              Always learning.
+            </span>
           </p>
           <br />
-          <p
+          {/* <p
             className={`text-sm sm:text-base leading-relaxed text-center font-times transition-opacity duration-1000 ease-in-out ${
               isBottomVisible ? "opacity-100" : "opacity-0"
             }`}
           >
             Enjoyer of basketball, hiking, reading, and geoguessr.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
