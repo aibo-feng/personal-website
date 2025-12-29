@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 
 export default function About() {
   const [isTopVisible, setIsTopVisible] = useState(false);
-  const [isBottomVisible, setIsBottomVisible] = useState(false);
   const [isAlwaysVisible, setIsAlwaysVisible] = useState(false);
 
   useEffect(() => {
@@ -13,11 +12,6 @@ export default function About() {
       setIsTopVisible(true);
     }, 100); // delay for top paragraph
 
-    // trigger fade-in effect for the bottom paragraph
-    const bottomTimeout = setTimeout(() => {
-      setIsBottomVisible(true);
-    }, 390); // slightly longer delay for bottom paragraph
-
     // trigger fade-in for the "Always learning" sentence after 1s
     const alwaysTimeout = setTimeout(() => {
       setIsAlwaysVisible(true);
@@ -25,7 +19,6 @@ export default function About() {
 
     return () => {
       clearTimeout(topTimeout);
-      clearTimeout(bottomTimeout);
       clearTimeout(alwaysTimeout);
     }; // cleanup timeouts on unmount
   }, []);
@@ -82,13 +75,6 @@ export default function About() {
             </span>
           </p>
           <br />
-          {/* <p
-            className={`text-sm sm:text-base leading-relaxed text-center font-times transition-opacity duration-1000 ease-in-out ${
-              isBottomVisible ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            Enjoyer of basketball, hiking, reading, and geoguessr.
-          </p> */}
         </div>
       </div>
     </section>
